@@ -7,3 +7,16 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus-config.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana-oss
+    ports:
+      - "4545:3000"  # Maps host port 4545 to Grafana's default container port 3000
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
