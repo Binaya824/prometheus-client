@@ -3,7 +3,7 @@ global:
 
 scrape_configs:
   - job_name: 'ocrpro.ai'
-    scheme: https
+    scheme: http
     metrics_path: /api/core/metrics
     static_configs:
       - targets: ['ocrpro.ai']
