@@ -13,7 +13,9 @@ services:
   grafana:
     image: grafana/grafana-oss
     ports:
-      - "4545:3000"  # Maps host port 4545 to Grafana's default container port 3000
+      - "4545:4545"  # Host:Container
+    environment:
+      - GF_SERVER_HTTP_PORT=4545  # Maps host port 4545 to Grafana's default container port 3000
     networks:
       - monitoring
 
