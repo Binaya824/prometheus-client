@@ -16,6 +16,7 @@ services:
       - "4545:4545"  # Host:Container
     environment:
       - GF_SERVER_HTTP_PORT=4545  # Maps host port 4545 to Grafana's default container port 3000
+      - GF_SERVER_ROOT_URL=http://localhost:4545/
     networks:
       - monitoring
 
